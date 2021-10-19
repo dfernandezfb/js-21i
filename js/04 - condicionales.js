@@ -64,7 +64,7 @@
 // }
 
 //PROVINCIAS COPADAS
-const provincia = prompt('¿De que provincia sos?');
+// const provincia = prompt('¿De que provincia sos?');
 
 // if(provincia === 'Tucumán'){
 //   alert('Que rico sanguche de milanesa y mirinda manzana')
@@ -78,15 +78,101 @@ const provincia = prompt('¿De que provincia sos?');
 // }
 
 //PROVINCIAS COPADAS CON SWITCH
-switch (provincia) {
-  case 'Tucuman':
-    alert('Que rico sanguche de milanesa y mirinda manzana');
-    break;
-  case 'Cordoba':
-    alert('Que buen fernet');
-    break;
-  default:
-    console.log('entre acá');
-    alert('Que provincia aburrida')
-    break
-}
+// switch (provincia) {
+//   case 'Tucuman':
+//     alert('Que rico sanguche de milanesa y mirinda manzana');
+//     break;
+//   case 'Cordoba':
+//     alert('Que buen fernet');
+//     break;
+//   default:
+//     console.log('entre acá');
+//     alert('Que provincia aburrida')
+//     break
+// }
+
+//EJERICIOS DE REPASO
+
+// const x = Number(prompt('Ingrese un numero')); //9
+// const y = Number(prompt('Ingrese otro número')); //7
+
+// if(x>y)
+// {
+//   console.log(x+y);
+// }
+// else if(x<y)
+// {
+//   console.log(y-x);
+// }
+// else 
+// {
+//   console.log(x*y);
+// }
+
+//EJERCICIO DE EDAD
+// const edad = Number(prompt('Que edad tenes?')); //38
+// const genero = 'masculino'
+// switch(true){
+//   case edad>0 && edad<10 && genero==='masculino'/*false*/:
+//     alert('Elegante');
+//     console.log('entre');
+//   break; //sale del switch
+//   case edad>=10 && edad<20:
+//     alert('Los wachiturros');
+//   break;
+//   case edad>=20 && edad<30:
+//     alert('Black eyes peas');
+//   break;
+//   case edad>=30 && edad<40 /*true*/:
+//     alert('Backstreet boys');
+//   break;
+//   case edad>=40 && edad<50:
+//     alert('Phil Collins');
+//   break;
+//   default:
+//     alert('Los 60, 70 y 80 son lo mejor');
+//   break;
+// }
+
+// switch(genero){
+//   case 'masculino':
+//     alert('M');
+//   break;
+//   case 'femenino':
+//     alert('F');
+//   break;
+//   default:
+//     alert('E')
+//   break;
+// }
+
+//EJERCICIO DIA
+
+// const dia = new Date().getDay(); 
+// //1 si es lunes
+// //2 si es martes
+// //...
+
+// switch(dia){
+//   case 1:
+//     console.log('Hoy es Lunes');
+//   break;
+//   case 2:
+//     console.log('Hoy es Martes');
+//   break;
+//   case 3:
+//     console.log('Hoy es Miercoles');
+//   break;
+//   case 4:
+//     console.log('Hoy es Jueves');
+//   break;
+//   case 5:
+//     console.log('Hoy es Viernes');
+//   break;
+//   case 6:
+//     console.log('Hoy es Sabado');
+//   break;
+//   case 7:
+//     console.log('Hoy es Domingo');
+//   break;
+// }
