@@ -176,3 +176,34 @@
 //     console.log('Hoy es Domingo');
 //   break;
 // }
+let name = prompt('Indique su nombre');
+let age = prompt('Indique su edad');
+let gender = prompt('Indique su genero');
+let pain = prompt('Indique su dolencia');
+
+switch(pain){
+  case 'Dolor abdominal':
+    if(gender==='mujer' || gender==='femenino'){
+      let isPregnant = prompt('Estas embarazada?');
+      if( isPregnant==='si'){
+        alert('Turno para ecografía');
+      }else if (isPregnant==='no'){
+        alert('Turno para tomografía o placa');
+      }else{
+        alert('Hacerse control de embarazo');
+      }
+    }
+  break;
+  case 'Cefalea':
+    alert('Tomate un tafirol')
+  break;
+  case 'Quebradura':
+    alert('Anda a un traumatologo')
+  break;
+  case 'Exceso de alcohol':
+    alert('Pedile un alikal a Osky')
+  break;
+  default:
+    alert('Ya te van a atender');
+  break;
+}
