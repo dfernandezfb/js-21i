@@ -92,3 +92,45 @@
 //       console.log(x-y);
 // }
 
+// EXCALIBUR
+// let nombre;
+// let esRey = false;
+// while (nombre !== 'Arturo' || esRey!==true) {
+//   nombre = prompt('Cual es su nombre?');
+//   if (nombre === 'Arturo') {
+//     esRey=confirm('Sos rey?');
+//     if (esRey === true) {
+//       alert('Sacaste el prompt');
+//       debugger
+//     }else{
+//       alert('No sos rey');
+//     }
+//   }
+//   else {
+//     alert('Seguí participando');
+//   }
+// }
+
+
+
+// a OR (||) b
+// a verdadero y b falso --> true
+// a falso y b verdadero --> true
+// a verdadero y b verdadero --> true
+// a falsa y b falso --> false
+// a AND (&&) b
+// a verdadero y b falso --> false
+// a falso y b verdadero --> false
+// a verdadero y b verdadero --> true
+// a falsa y b falso --> false
+
+
+
+
+
+
+
+
+
+
+
