@@ -154,37 +154,109 @@
 
 //EJERCICIO CUENTA BANCARIA
 
-class Cuenta {
-  constructor(titular, numero, alias){
-    this.titular = titular;
-    this.saldo = 0;
-    this.numero = numero;
-    this.alias = alias;
+// class Cuenta {
+//   constructor(titular, numero, alias){
+//     this.titular = titular;
+//     this.saldo = 0;
+//     this.numero = numero;
+//     this.alias = alias;
+//   }
+//   ingresar(monto){
+//     if(monto<=0){
+//       alert('El monto no es válido');
+//     }else{
+//       this.saldo=this.saldo + monto;
+//       this.informar();
+//     }
+//   }
+//   extraer(monto){
+//     if(monto<=0){
+//       alert('El monto no es válido');
+//     }else if(monto<=this.saldo){
+//       this.saldo=this.saldo-monto;
+//       this.informar();
+//     }else{
+//       alert('Saldo insuficiente, espera el aguinaldo');
+//     }
+//   }
+//   informar(){
+//     alert(`La cuenta ${this.numero} del titular ${this.titular} tiene un saldo de ${this.saldo}`)
+//   }
+// }
+
+// let diego = new Cuenta('Diego',354354354,'eldiegote');
+
+// diego.ingresar(50000)
+// diego.extraer(60000)
+
+//EJERCICIO LISTA DE LIBROS
+
+class Lista{
+  constructor(dueño){
+    this.dueño=dueño;
+    this.librosYaLeidos=[];
+    this.librosNoLeidos=[];
+    this.siguienteLibro={};
+    this.libroActual={};
+    this.ultimoLibro={};
+    this.libros=[];
   }
-  ingresar(monto){
-    if(monto<=0){
-      alert('El monto no es válido');
+  agregarLibro(libro){
+    this.libros.push(libro);
+    if(libro.leido){   // es lo mismo que utilizar libro.leido == true
+      this.librosYaLeidos.push(libro);
     }else{
-      this.saldo=this.saldo + monto;
-      this.informar();
+      this.librosNoLeidos.push(libro);
     }
   }
-  extraer(monto){
-    if(monto<=0){
-      alert('El monto no es válido');
-    }else if(monto<=this.saldo){
-      this.saldo=this.saldo-monto;
-      this.informar();
+  empezarLibro(nombreLibro){
+    let libroQueCoincida = this.libros.find(libro=>libro.titulo===nombreLibro);
+    if(!libroQueCoincida){
+      console.log('Ese libro no es está en tu lista');
     }else{
-      alert('Saldo insuficiente, espera el aguinaldo');
+      this.libroActual= libroQueCoincida;
     }
   }
-  informar(){
-    alert(`La cuenta ${this.numero} del titular ${this.titular} tiene un saldo de ${this.saldo}`)
+  buscarLibrosPorGenero(genero){
+    let librosQueCoincidan = this.libros.filter(libro=>libro.genero===genero);
+    if(librosQueCoincidan.length===0){
+      console.log('No tengo libros de ese genero');
+    }else{
+      console.log(librosQueCoincidan);
+    }
+  }
+  finalizarLibro(){
+    this.ultimoLibro=this.libroActual;
+    this.libroActual=null;
+    this.librosYaLeidos.push(this.ultimoLibro);
+    let posicionLibroASacar = this.librosNoLeidos.indexOf(this.ultimoLibro)
+    this.librosNoLeidos.splice(posicionLibroASacar,1);
+  }
+}
+//
+class Libro{
+  constructor(titulo,genero,autor,leido){
+    this.titulo=titulo;
+    this.genero=genero;
+    this.autor=autor;
+    this.leido=leido;
   }
 }
 
-let diego = new Cuenta('Diego',354354354,'eldiegote');
+let padreRicoPadrePobre = new Libro('Padre rico, padre pobre', 'Finanzas', 'Robert Kiyosaki', false);
+let elPrincipito = new Libro('El Principito', 'Infantil', 'Anthony', false);
+let elArteDeLaGuerra = new Libro('El arte de la guerra', 'Infantil', 'sun', false);
+let laMuerteVisitaAlDentista = new Libro('La muerte visita al dentista', 'Policial', 'Agatha Christie', false);
 
-diego.ingresar(50000)
-diego.extraer(60000)
+let diego = new Lista('Diego');
+
+diego.agregarLibro(padreRicoPadrePobre);
+diego.agregarLibro(elPrincipito);
+diego.agregarLibro(elArteDeLaGuerra);
+diego.agregarLibro(laMuerteVisitaAlDentista);
+
+diego.empezarLibro('El Principito');
+
+console.log(diego);
+
+//!TERMINADO
