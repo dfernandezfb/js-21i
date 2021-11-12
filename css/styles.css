@@ -1,0 +1,15 @@
+#corral{
+  width: 100%;
+  height: 50vh;
+  background-color: tomato;
+}
+
+#mascota{
+  width: 30px;
+  height: 30px;
+}
+
+
+.is-active{
+  background-color: yellowgreen;
+}

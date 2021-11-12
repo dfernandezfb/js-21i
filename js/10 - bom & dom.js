@@ -62,14 +62,26 @@
 
 
 //EJERCICIO PRÁCTICO - SECCIÖN DE COMENTARIOS
-let form =document.getElementById('comments-form')
+let form =document.getElementById('comments-form');
 function addComment(event){
   event.preventDefault(); //prevenimos las acciones por defecto del evento
+
   console.log(event);
   let comment = document.querySelector('#comment-form').value;
+  let removeButton = document.createElement('button');
+  removeButton.innerText='X';
+  removeButton.classList.add('btn','btn-danger')
+  removeButton.setAttribute("onclick","removeComment(event)")
+
   let commentBlock = document.createElement('li');
   commentBlock.innerText = comment;
   let commentsList = document.querySelector('#comments-list');
+  commentBlock.appendChild(removeButton)
   commentsList.appendChild(commentBlock);
+
   form.reset();
+}
+
+function removeComment(event){
+  event.target.parentElement.remove();
 }
