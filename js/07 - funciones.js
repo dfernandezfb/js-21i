@@ -1,3 +1,4 @@
+'use strict'
 // // Formas de declarar una función 
 // const hello = function(){
 //   console.log('Hola Mundo');
@@ -160,11 +161,12 @@
 //CARRITO DE COMPRAS
 
 let carrito = [];//['agua', 'cerveza', 'pan']
-
-function agregarProducto(){
+export const constante = "Soy una constante";
+export function agregarProducto(){
   let producto = prompt ('Ingrese un producto');
-  carrito.push(producto.toLowerCase().trim()); //'  HoLa ' '  hola ' 'hola'
-  console.log(carrito);
+  // carrito.push(producto.toLowerCase().trim()); //'  HoLa ' '  hola ' 'hola'
+  // console.log(carrito);
+  console.log(producto);
 }
 
 function mostrarCarrito(){
